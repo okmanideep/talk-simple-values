@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<style>
+			{{ INLINE_CSS }}
+		</style>
+
+		<title>Slides</title>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Simple & Easy</section>
+				<section>
+					<div style="width: 480px; margin: auto; text-align: left">
+						<p>Simple</p>
+						<p class="small"><em>one fold or one braid</em></p>
+						<img class="fragment" src="https://image.slidesharecdn.com/codeharbourjune2019-part2-copywecompress-190607110658/75/seeking-simplicity-by-phil-nash-codeharbour-june-2019-20-2048.jpg?cb=1670418534" />
+						<p class="small fragment">Objective/Absolute</p>
+					</div>
+				</section>
+				<section>
+					<div style="width: 480px; margin: auto; text-align: left">
+						<p>Easy</p>
+						<p class="small"><em>lie near</em></p>
+						<p class="small fragment">Subjective/Relative</p>
+						<p>&nbsp;</p>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<p data-id="package-install" class="small"><code>gem install hairball</code><br> is easy</p>
+				</section>
+				<section data-auto-animate>
+					<p data-id="package-install" class="small"><code>npm install leftpad</code><br> is easy</p>
+					<p class="fragment">🤡</p>
+				</section>
+				<section>Values</section>
+				<section>
+					<div style="width: 600px; margin: auto; text-align: left">
+						<p>Value</p>
+						<p class="small"><em>Relative worth</em></p>
+						<p class="small"><em>A particular magnitude, number or amount</em></p>
+						<br>
+						<p class="small fragment"><code>42</code></p>
+					</div>
+				</section>
+				<section><p>Is <code>String</code> a value?</p></section>
+				<section>
+					<pre>
+						<code class="language-ruby" data-trim>
+							str = 'Hello World'
+							str.replace('World', 'Ruby')
+							puts str
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p class="small">In all the languages we use these days</p>
+					<p><code>String</code> is <strong>immutable</strong></p>
+				</section>
+				<section>
+					<p class="small">But for some <em>reason</em></p>
+					<p class="small">A lot of our objects - that represent data - aren't immutable</p>
+				</section>
+				<section>
+					<p class="small">The reason</p>
+					<img width="400" src="https://m.media-amazon.com/images/I/91A2rYHQRlL._SX522_.jpg" />
+					<p class="small fragment">8 MB</p>
+				</section>
+				<section>
+					<p class="small">Ruby was created in 1995</p>
+					<p class="small fragment">A typical PC had 4 MB RAM</p>
+				</section>
+				<section data-auto-animate>
+					<p class="small">Memory was scarce</p>
+				</section>
+				<section data-auto-animate>
+					<p class="small">Memory <em>was</em> scarce</p>
+					<p class="small fragment">Not anymore</p>
+				</section>
+				<section>
+					<p class="small">Trade-offs that were necessary back then, are likely, not needed now</p>
+				</section>
+				<section>
+					<p>Value of Values</p>
+				</section>
+				<section>
+					<ul class="small">
+						<li>Easy to fabricate</li>
+						<li>Easy to share</li>
+						<li class="fragment">Language independent</li>
+					</ul>
+				</section>
+				<section>
+					<p class="small">Values aggregate to values</p>
+				</section>
+				<section>
+					<p>Values make the best interfaces</p>
+					<p class="small fragment">We do it in the large all the time</p>
+					<pre class="fragment">
+						<code class="language-json" data-trim>
+							{
+								"name": "John Doe",
+								"age": 42,
+								"location": {
+									"city": "London",
+									"country": "UK"
+								}
+							}
+						</code>
+					</pre>
+					<p class="small fragment">But it applies in the small as well</p>
+				</section>
+				<section style="text-align: left" data-auto-animate>
+					<p class="small"><a href="https://github.com/sidekiq/sidekiq/wiki/Best-Practices#1-make-your-job-parameters-small-and-simple">sideqik/wiki/Best-Practices</a></p>
+					<p class="small">
+						<em>
+							"The arguments you pass to <code>perform_async</code> must be composed of simple JSON datatypes: <code>string</code>, <code>integer</code>, <code>float</code>, <code>boolean</code>, <code>nil</code>, <code>array</code> and <code>hash</code>"
+						</em>
+					</p>
+				</section>
+				<section>
+					But I never faced any issues with Objects 🤷
+				</section>
+				<!-- More slides -->
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			{{ INLINE_JS }}
+		</script>
+		<script type="text/javascript">
+			{{ INLINE_LIVE_RELOAD_JS }}
+		</script>
+	</body>
+</html>

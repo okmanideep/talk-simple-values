@@ -1,0 +1,7 @@
+.reveal .small {
+  font-size: 0.7em;
+}
+
+.reveal :not(pre)>code {
+	color: var(--r-link-color);
+}
