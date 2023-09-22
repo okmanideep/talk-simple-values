@@ -20,15 +20,29 @@
 						<p>Simple</p>
 						<p class="small"><em>one fold or one braid</em></p>
 						<img class="fragment" src="https://image.slidesharecdn.com/codeharbourjune2019-part2-copywecompress-190607110658/75/seeking-simplicity-by-phil-nash-codeharbour-june-2019-20-2048.jpg?cb=1670418534" />
-						<p class="small fragment">Objective/Absolute</p>
 					</div>
 				</section>
 				<section>
 					<div style="width: 480px; margin: auto; text-align: left">
 						<p>Easy</p>
 						<p class="small"><em>lie near</em></p>
-						<p class="small fragment">Subjective/Relative</p>
 						<p>&nbsp;</p>
+					</div>
+				</section>
+				<section>
+					<div style="display: flex">
+						<div style="flex: 1">
+							<p>Simple</p>
+							<p class="small"><em>one fold or one braid</em></p>
+							<p class="small fragment" data-fragment-index="1">Objective/Absolute</p>
+							<p class="small fragment" data-fragment-index="3">End State</p>
+						</div>
+						<div style="flex: 1">
+							<p>Easy</p>
+							<p class="small"><em>lie near</em></p>
+							<p class="small fragment" data-fragment-index="2">Subjective/Relative</p>
+							<p class="small fragment" data-fragment-index="4">Effort</p>
+						</div>
 					</div>
 				</section>
 				<section data-auto-animate>
@@ -54,7 +68,7 @@
 						<code class="language-ruby" data-trim>
 							str = 'Hello World'
 							str.replace('World', 'Ruby')
-							puts str
+							p str
 						</code>
 					</pre>
 				</section>
@@ -91,12 +105,11 @@
 				<section>
 					<ul class="small">
 						<li>Easy to fabricate</li>
-						<li>Easy to share</li>
+						<li class="fragment">Easy to share</li>
 						<li class="fragment">Language independent</li>
+						<li class="fragment">Values aggregate to values</li>
+						<li class="fragment">Reproducible Results</li>
 					</ul>
-				</section>
-				<section>
-					<p class="small">Values aggregate to values</p>
 				</section>
 				<section>
 					<p>Values make the best interfaces</p>
@@ -124,9 +137,88 @@
 					</p>
 				</section>
 				<section>
-					But I never faced any issues with Objects 🤷
+					<p class="small"><em>Cool poetry. But I've got work to do</em></p>
 				</section>
-				<!-- More slides -->
+				<section data-auto-animate>
+					<p class="small">Ruby 3.2 <code>Data</code></p>
+					<pre class="fragment" data-id="data-example">
+						<code class="language-ruby" data-trim>
+							PosterInput = Data.define(
+								:user, :role, :parties
+								:layout, :subscription,
+							)
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<p class="small">Ruby 3.2 <code>Data</code></p>
+					<pre class="fragment" data-id="data-example">
+						<code class="language-ruby" data-trim>
+							PosterInput = Data.define(
+								:user, :role, :parties
+								:layout, :subscription,
+							) do
+								def self.variationsFor(creative)
+									...
+								end
+							end
+						</code>
+					</pre>
+				</section>
+				<section>
+					<img width="600" src="https://media.istockphoto.com/id/940442672/vector/packing-and-production-line-concept-in-flat-style-industrial-machine-vector-illustration.jpg?s=612x612&w=0&k=20&c=_nDYOpSeM9YAt7yu6vo8YatgTcw9AlsqDQRu4Wy9l9g=" />
+				</section>
+				<section>Beware of Order</section>
+				<section data-auto-animate>
+					<pre data-id="order-example">
+						<code class="language-ruby" data-trim>
+							Worker.perform_async(district_id, mandal_id, village_id)
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<pre data-id="order-example">
+						<code class="language-ruby" data-trim>
+							Worker.perform_async(district_id, mandal_id, village_id)
+
+							Worker.perform_async({
+								district_id: district_id,
+								mandal_id: mandal_id,
+								village_id:  village_id
+							})
+						</code>
+					</pre>
+				</section>
+				<section data-auto-animate>
+					<pre data-id="order-example">
+						<code class="language-ruby" data-trim>
+							Worker.perform_async({0: district_id, 1: mandal_id, 2: village_id})
+
+							Worker.perform_async({
+								district_id: district_id,
+								mandal_id: mandal_id,
+								village_id:  village_id
+							})
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre>
+						<code class="language-ruby" data-trim>
+							district_id = args[0].to_i
+							mandal_id = args[1].to_i
+							id = args[2].to_i
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p class="small">Order is very sneaky</p>
+				</section>
+				<section>
+					<p class="small"><a href="https://www.youtube.com/watch?v=rI8tNMsozo0" target="blank"><i class="fa-brands fa-youtube" style="color: #c4302b;"></i> Simplicity Matters | Rich Hickey</a></p>
+					<p class="small"><a href="https://www.youtube.com/watch?v=-6BsiVyC1kM" target="blank"><i class="fa-brands fa-youtube" style="color: #c4302b;"></i> The Value of Values | Rich Hickey</a></p>
+					<p class="small fragment">🙏</p>
+				</section>
 			</div>
 		</div>
 
@@ -136,5 +228,8 @@
 		<script type="text/javascript">
 			{{ INLINE_LIVE_RELOAD_JS }}
 		</script>
+
+		<!-- FONT AWESOME-->
+		<script src="https://kit.fontawesome.com/ed0d20bdb5.js" crossorigin="anonymous"></script>
 	</body>
 </html>
